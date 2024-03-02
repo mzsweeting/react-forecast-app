@@ -12,6 +12,7 @@ export default function App() {
         <a
           href="https://github.com/mzsweeting/react-forecast-app.git"
           target="_blank"
+          rel="noopener noreferrer"
         >
           open-sourced on github
         </a>
