@@ -5,16 +5,18 @@ import "./Weather.css";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
+    
+    
     function handleResponse(response) {
         setWeatherData({
             ready: true,
             temperature: response.data.main.temp,
             humidity: response.data.main.humidity,
-            date: new Date(response.data.dt*1000),
+            date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
             wind: response.data.wind.speed,
-            city: response.data.name
+            city: response.data.name,
         });
     }
 
@@ -75,8 +77,7 @@ export default function Weather(props) {
       );    
     } else {
       const apiKey = "b686de8bc01821a479175c046eac1f90";
-      let apiURL = `http://api.openweathermap.org/data/2.5/weather?
-      q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+      let apiURL = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
       axios.get(apiURL).then(handleResponse);
 
       return "Loading...";
