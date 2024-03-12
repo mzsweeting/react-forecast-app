@@ -62,7 +62,7 @@ function handleCityChange(event) {
            </div>
           </form>
           <WeatherInfo data={weatherData}/>
-          <WeatherForecast coordinates={weatherData.coordinates} /> 
+          <WeatherForecast coordinates={weatherData.coord} /> 
         </div>   
       );    
     } else {
